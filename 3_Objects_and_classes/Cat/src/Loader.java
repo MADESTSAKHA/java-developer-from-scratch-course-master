@@ -8,6 +8,11 @@ public class Loader
         DateFormat format = new SimpleDateFormat("HH:mm:ss dd.MMMyyyy г.");
         Date date = new Date ();
 
+
+
+        System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
+        System.out.println("\t\n    ---------===============---------");
+
                     //  Object #1 - мертвый
 
         Cat murka = new Cat();
@@ -17,8 +22,10 @@ public class Loader
             murka.meow();
             System.out.println(murka.getWeight());
         }
-        System.out.println("\t\nМурка представилась!\nВремя смерти: " + format.format(date) + "\nВес Мурки: " + murka.getWeight() + " гр. намяукала на: " + murka.meowmeow() + ", статус: " + murka.getStatus());
+        System.out.println("\t\nМурка представилась!\nВремя смерти: " + format.format(date) + "\nВес Мурки: " + murka.getWeight() + " гр. намяукала на: " + murka.meowmeow());
         System.out.println("Цвет кошки: " + murka.catColor.getTranslation());
+        System.out.println("\nСтатус: " + murka.getStatus());
+        System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------\n");
 
                     //  Object #2 - мертвый
@@ -30,8 +37,10 @@ public class Loader
             niceniga.feed(500.0);
             System.out.println(niceniga.getWeight());
         }
-        System.out.println("\nGet out there, it is gonna blow!" + "\n\tСъел: " + niceniga.eaten() + " гр. Статус: " + niceniga.getStatus());
+        System.out.println("\nGet out there, it is gonna blow!" + "\n\tСъел: " + niceniga.eaten() + " гр.");
         System.out.println("Цвет кошки: " + niceniga.catColor);
+        System.out.println("\nСтатус: " + niceniga.getStatus());
+        System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------\n");
 
                     //  Object #3 - мертвый
@@ -43,8 +52,10 @@ public class Loader
             kuzya.feed(1200.0);
             System.out.println("Вес кота Кузи: " + kuzya.getWeight());
         }
-        System.out.println("\t\nБыло съедено: " + kuzya.eaten() + " гр. Статус: " + kuzya.getStatus());
+        System.out.println("\t\nБыло съедено: " + kuzya.eaten() + " гр.");
         System.out.println("Цвет кошки: " + kuzya.catColor);
+        System.out.println("\nСтатус: " + kuzya.getStatus());
+        System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------\n");
 
                     //  Object #4 - мертвый
@@ -61,6 +72,8 @@ public class Loader
         System.out.println("Цвет кошки: " + vasia.catColor);
         vasia.pee();         //проверка дополнительного ДЗ к Урок 3. Статические методы и переменные
         System.out.println("Вес кота Василия: " + vasia.getWeight());
+        System.out.println("\nСтатус: " + vasia.getStatus());
+        System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------\n");
 
                     //  Object #5 - живой - мертвый 50/50
@@ -81,17 +94,21 @@ public class Loader
         System.out.println("Вес кота Барсика: " + barsik.getWeight());
         barsik.meow();
         System.out.println("Вес кота Барсика: " + barsik.getWeight());
-        System.out.println("\nСтатус: " + barsik.getStatus() + "\n\tБарсик съел: " + barsik.eaten() + " гр. намяучил: " + barsik.meowmeow() + " покакал: " + barsik.deduced() + " гр.");
+        System.out.println("\n\tБарсик съел: " + barsik.eaten() + " гр. намяучил: " + barsik.meowmeow() + " покакал: " + barsik.deduced() + " гр.");
         System.out.println("Цвет кошки: " + barsik.catColor);
+        System.out.println("\nСтатус: " + barsik.getStatus());
+        System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------\n");
 
                     //  Object #6 - живой
 
         Cat kris = new Cat();
-        System.out.println("Кот Крис, появился на свет: " + format.format(date) + " с весом: " + kris.getWeight() + " гр. Статус: " + kris.getStatus());
+        System.out.println("Кот Крис, появился на свет: " + format.format(date) + " с весом: " + kris.getWeight() + " гр.");
         kris.feed(1500.0);
         System.out.println("Поел на: " + kris.eaten() + " гр. Ну и жрать! 8о) \t\nВес: " + kris.getWeight() + "\t\nСтатус: " + kris.getStatus());
         System.out.println("Цвет кошки: " + kris.catColor);
+        System.out.println("\nСтатус: " + kris.getStatus());
+        System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------\n");
 
                     //  Object #7 - живой
@@ -99,6 +116,8 @@ public class Loader
         Cat monster = new Cat();
         System.out.println("\tСоздан кот Монстер");
         System.out.println("Цвет кошки: " + monster.catColor);
+        System.out.println("\nСтатус: " + monster.getStatus());
+        System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------\n");
 
         //  Object #8 - живой
@@ -110,12 +129,26 @@ public class Loader
             spartak.meow();
             System.out.println("Вес кота Спартака: " + spartak.getWeight());
         }
-        System.out.println("\nСтатус: " + spartak.getStatus() + " Вес: " + spartak.getWeight());
+        System.out.println("Вес: " + spartak.getWeight());
         System.out.println("Цвет кошки: " + spartak.catColor);
         System.out.println("Цвет кошки c переводом на русский: " + spartak.catColor.getTranslation());
+        System.out.println("\nСтатус: " + spartak.getStatus());
+        System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------\n");
 
-        System.out.println("\tОбъектов для наблюдений осталось: " + Cat.getCount());
+        //  Object #9 - Мертвый
+
+        Cat DeadCat = new Cat();
+        System.out.println("Появился мертвый кот, но он об этом еще не знает!\n");
+        while(1000 <= DeadCat.getWeight())       //Остановка по весу.
+        {
+            DeadCat.pee();
+            System.out.println("Вес мертвого кота: " + DeadCat.getWeight());
+        }
+        System.out.println("\nСтатус: " + spartak.getStatus());
+        System.out.println("\t\n    ---------===============---------");
+        System.out.println("\n\tОбъектов для наблюдений осталось: " + Cat.getCount());
         System.out.println("\n\tНа нас смотрят: " + Cat.getEyesCount() + " глаз(а).");       //количество глаз, оставшихся кошек!
+        System.out.println("\n\tОбъектов сдохло из за экспериментов: " + Cat.catDeadCount());
     }
 }

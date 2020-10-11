@@ -10,6 +10,7 @@ public class Cat
     private double deducedCount; //кладем сюда сколько покакал. 8о)
     private double meowCount;    //кладем сюда сколько мяукал. 8о)
     private static int catCount; //кладем сюда количество кошек.
+    private static int catDeadCount; ////кладем сюда количество сдохших кошек.
     public CatColor catColor;    //Здесь цвет кошки.
 
     private double meowCat = Math.random() * 1500.0; //переменная мяу-мяу и на сколько мяукает.
@@ -23,19 +24,23 @@ public class Cat
         catColor = getRandom(); //Задается цвет кошки.
     }
 
-    public boolean isAliveMain() // Жива ли кошка?!?!
-    {
-        return isAlive() && isAlive2();
-    }
-
     public boolean isAlive() // Жива ли кошка?!?! определение по весу
     {
         return (getWeight() >= MIN_WEIGHT && getWeight() <= MAX_WEIGHT);
     }
 
-    public boolean isAlive2() // Жива ли кошка?!?! по статусу который по весу 8о)
+    public void isDead() // Однозначно мертва, то счетчик catCount в минус!
     {
-        return getStatus().equals("Играет") || getStatus().equals("Спит");
+        if (getWeight() < MIN_WEIGHT || getWeight() > MAX_WEIGHT)
+        {
+            catCount--;
+            catDeadCount ++;
+        }
+    }
+
+    public static int catDeadCount() //метод вызов сколько скончалось.
+    {
+        return catDeadCount;
     }
 
     public static CatColor getRandom() //Случайный цвет кошки.
@@ -55,35 +60,44 @@ public class Cat
 
     public void meow()
     {
-        if (isAliveMain())
+        if (isAlive())
         {
             weight = weight - meowCat;
             meowCount += meowCat;
             System.out.println("Meow");
-        }
-        if (!isAliveMain())
-        {
-            catCount --;
+            isDead();
         }
     }
 
     public void pee()      //метод сходить туалет.
     {
-        weight = weight - peeCat;
-        deducedCount += peeCat;
-        System.out.println("I pooped!!!");
+        if (isAlive())
+        {
+            weight = weight - peeCat;
+            deducedCount += peeCat;
+            System.out.println("I pooped!!!");
+            isDead();
+        }
     }
 
     public void feed(Double amount)
     {
-        weight = weight + amount;
-        eatenCount += amount;
+        if (isAlive())
+        {
+            weight = weight + amount;
+            eatenCount += amount;
+            isDead();
+        }
     }
 
     public void drink(Double amount)
     {
-        weight = weight + amount;
-        eatenCount += amount;
+        if (isAlive())
+        {
+            weight = weight + amount;
+            eatenCount += amount;
+            isDead();
+        }
     }
 
     public Double getWeight()
