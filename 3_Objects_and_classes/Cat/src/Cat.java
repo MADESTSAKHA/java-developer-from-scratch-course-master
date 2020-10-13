@@ -12,6 +12,7 @@ public class Cat
     private static int catCount; //кладем сюда количество кошек.
     private static int catDeadCount; ////кладем сюда количество сдохших кошек.
     public CatColor catColor;    //Здесь цвет кошки.
+    public CatName catName;      //Здесь имена кошек.
 
     private double meowCat = Math.random() * 1500.0; //переменная мяу-мяу и на сколько мяукает.
     private double peeCat = Math.random() * 1500.0; //переменная какашек и на сколько грамм какает 8о)
@@ -22,14 +23,21 @@ public class Cat
         catCount ++;            //  (+) кошка.
         originWeight = weight;  //Вес при создании.
         catColor = getRandom(); //Задается цвет кошки.
+        catName = getRandom2(); //Задается имя кошки.
     }
 
-    public boolean isAlive() // Жива ли кошка?!?! определение по весу
+    public Cat(Double weight) //Конструктор, чтобы массу кошки можно было задавать.
+    {
+        this();
+        this.weight = weight;
+    }
+
+    private boolean isAlive() // Жива ли кошка?!?! определение по весу
     {
         return (getWeight() >= MIN_WEIGHT && getWeight() <= MAX_WEIGHT);
     }
 
-    public void isDead() // Однозначно мертва, то счетчик catCount в минус!
+    private void isDead() // Однозначно мертва, то счетчик catCount в минус!
     {
         if (getWeight() < MIN_WEIGHT || getWeight() > MAX_WEIGHT)
         {
@@ -46,6 +54,11 @@ public class Cat
     public static CatColor getRandom() //Случайный цвет кошки.
     {
         return CatColor.values()[(int) (Math.random() * CatColor.values().length)];
+    }
+
+    public static CatName getRandom2() //Случайный цвет кошки.
+    {
+        return CatName.values()[(int) (Math.random() * CatColor.values().length)];
     }
 
     public static int getEyesCount()      //метод вызов сколько осталось глаз кошек!
