@@ -8,11 +8,33 @@ public class Car
     public boolean hasVehicle;
     public boolean isSpecial;
 
+    public String getNumber()
+    {
+        return number;
+    }
+    public Integer getHeight()
+    {
+        return height;
+    }
+    public Double getWeight()       //такой же как и в Cat
+    {
+        return weight;
+    }
+
+    public String getHasVehicle()
+    {
+        return hasVehicle ? "Есть" : "Нет";
+    }
+
+    public String getIsSpecial()
+    {
+        return isSpecial ? "СПЕЦТРАНСПОРТ " : "";
+    }
+
     public String toString()
     {
-        String special = isSpecial ? "СПЕЦТРАНСПОРТ " : "";
         return "\n=========================================\n" +
-            special + "Автомобиль с номером " + number +
-            ":\n\tВысота: " + height + " мм\n\tМасса: " + weight + " кг";
+                getIsSpecial() + "Автомобиль с номером: " + getNumber() +
+                "\n\tВысота: " + getHeight() + " мм\n\tМасса: " + getWeight() + " кг" + "\n\tПрицеп: " + getHasVehicle();
     }
 }
