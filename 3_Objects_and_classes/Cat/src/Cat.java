@@ -3,7 +3,7 @@ public class Cat
     public static final int EYES_COUNT = 2;             //статичная константа количества глаз
     public static final double MIN_WEIGHT = 1000.0;     //статичная константа минимального веса
     public static final double MAX_WEIGHT = 9000.0;     //статичная константа максимального веса
-    private double originWeight;
+    private final double originWeight;
     private double weight;
 
     private double eatenCount;   //кладем сюда вес съеденной еды.
@@ -14,8 +14,8 @@ public class Cat
     public CatColor catColor;    //Здесь цвет кошки.
     public CatName catName;      //Здесь имена кошек.
 
-    private double meowCat = Math.random() * 1500.0; //переменная мяу-мяу и на сколько мяукает.
-    private double peeCat = Math.random() * 1500.0; //переменная какашек и на сколько грамм какает 8о)
+    private final double meowCat = Math.random() * 1500.0; //переменная мяу-мяу и на сколько мяукает.
+    private final double peeCat = Math.random() * 1500.0; //переменная какашек и на сколько грамм какает 8о)
 
     public Cat()
     {
