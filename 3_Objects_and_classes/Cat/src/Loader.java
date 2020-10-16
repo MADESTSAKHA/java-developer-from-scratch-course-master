@@ -1,3 +1,5 @@
+// Homework done
+
 import java.text.*;
 import java.util.Date;
 
@@ -193,6 +195,4 @@ public class Loader
     {
         return new Cat(1100.0);
     }
-
-
 }

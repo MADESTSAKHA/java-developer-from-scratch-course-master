@@ -1,3 +1,5 @@
+// Homework done
+
 public enum CatName
 {
     MURKA("Мурка"),         // #1

@@ -1,3 +1,5 @@
+// Homework done
+
 public enum CatColor
 {
     WHITE("Белый"),            // #1

@@ -1,3 +1,5 @@
+// Homework done
+
 public class Cat
 {
     public static final int EYES_COUNT = 2;             //статичная константа количества глаз
