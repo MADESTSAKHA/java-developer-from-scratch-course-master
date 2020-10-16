@@ -13,7 +13,16 @@ public class Cat
     private double meowCount;    //кладем сюда сколько мяукал. 8о)
     private static int catCount; //кладем сюда количество кошек.
     private static int catDeadCount; ////кладем сюда количество сдохших кошек.
-    public CatColor catColor;    //Здесь цвет кошки.
+    private CatColor catColor;    //Здесь цвет кошки.
+
+    public CatColor getCatColor() { //Урок 6. Инкапсуляция, геттеры и сеттеры
+        return catColor;
+    }
+
+    public void setCatColor(CatColor catColor) {
+        this.catColor = catColor;
+    }
+
     public CatName catName;      //Здесь имена кошек.
 
     private final double meowCat = Math.random() * 1500.0; //переменная мяу-мяу и на сколько мяукает.
