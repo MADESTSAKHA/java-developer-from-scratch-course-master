@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Loader
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
         DateFormat format = new SimpleDateFormat("HH:mm:ss dd.MMM yyyy г.");
         Date date = new Date ();
@@ -21,9 +21,9 @@ public class Loader
             cat1.meow();
             System.out.println(cat1.getWeight());
         }
-        System.out.println(cat1.catName.getTranslation() + " представился(ась)!\nВремя смерти: " + format.format(date) + "\nВес: " + cat1.getWeight() + " гр. намяукала на: " + cat1.meowmeow());
+        System.out.println(cat1.getCatName().getTranslation() + " представился(ась)!\nВремя смерти: " + format.format(date) + "\nВес: " + cat1.getWeight() + " гр. намяукала на: " + cat1.meowmeow());
         System.out.println("Цвет кошки: " + cat1.getCatColor().getTranslation());
-        System.out.println("Имя кота: " + cat1.catName.getTranslation());
+        System.out.println("Имя кота: " + cat1.getCatName().getTranslation());
         System.out.println("\nСтатус: " + cat1.getStatus());
         System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------2\n");
@@ -39,7 +39,7 @@ public class Loader
         }
         System.out.println("\nGet out there, it is gonna blow!" + "\n\tСъел: " + cat2.eaten() + " гр.");
         System.out.println("Цвет кошки: " + cat2.getCatColor());
-        System.out.println("Имя кота: " + cat2.catName.getTranslation());
+        System.out.println("Имя кота: " + cat2.getCatName().getTranslation());
         System.out.println("\nСтатус: " + cat2.getStatus());
         System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------3\n");
@@ -55,7 +55,7 @@ public class Loader
         }
         System.out.println("\t\nБыло съедено: " + cat3.eaten() + " гр.");
         System.out.println("Цвет кошки: " + cat3.getCatColor());
-        System.out.println("Имя кота: " + cat3.catName.getTranslation());
+        System.out.println("Имя кота: " + cat3.getCatName().getTranslation());
         System.out.println("\nСтатус: " + cat3.getStatus());
         System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------4\n");
@@ -74,7 +74,7 @@ public class Loader
         System.out.println("Цвет кошки: " + cat4.getCatColor());
         cat4.pee();         //проверка дополнительного ДЗ к Урок 3. Статические методы и переменные
         System.out.println("Вес кота: " + cat4.getWeight());
-        System.out.println("Имя кота: " + cat4.catName.getTranslation());
+        System.out.println("Имя кота: " + cat4.getCatName().getTranslation());
         System.out.println("\nСтатус: " + cat4.getStatus());
         System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------5\n");
@@ -99,7 +99,7 @@ public class Loader
         System.out.println("Вес кота: " + cat5.getWeight());
         System.out.println("\n\tCъел: " + cat5.eaten() + " гр. намяучил: " + cat5.meowmeow() + " покакал: " + cat5.deduced() + " гр.");
         System.out.println("Цвет кошки: " + cat5.getCatColor());
-        System.out.println("Имя кота: " + cat5.catName.getTranslation());
+        System.out.println("Имя кота: " + cat5.getCatName().getTranslation());
         System.out.println("\nСтатус: " + cat5.getStatus());
         System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------6\n");
@@ -111,7 +111,7 @@ public class Loader
         cat6.feed(1500.0);
         System.out.println("Поел на: " + cat6.eaten() + " гр. Ну и жрать! 8о) \t\nВес: " + cat6.getWeight() + "\t\nСтатус: " + cat6.getStatus());
         System.out.println("Цвет кошки: " + cat6.getCatColor());
-        System.out.println("Имя кота: " + cat6.catName.getTranslation());
+        System.out.println("Имя кота: " + cat6.getCatName().getTranslation());
         System.out.println("\nСтатус: " + cat6.getStatus());
         System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------7\n");
@@ -121,7 +121,7 @@ public class Loader
         Cat cat7 = new Cat();
         System.out.println("\tСоздан кот");
         System.out.println("Цвет кошки: " + cat7.getCatColor());
-        System.out.println("Имя кота: " + cat7.catName.getTranslation());
+        System.out.println("Имя кота: " + cat7.getCatName().getTranslation());
         System.out.println("\nСтатус: " + cat7.getStatus());
         System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------8\n");
@@ -138,7 +138,7 @@ public class Loader
         System.out.println("Вес: " + cat8.getWeight());
         System.out.println("Цвет кошки: " + cat8.getCatColor());
         System.out.println("Цвет кошки c переводом на русский: " + cat8.getCatColor().getTranslation());
-        System.out.println("Имя кота: " + cat8.catName.getTranslation());
+        System.out.println("Имя кота: " + cat8.getCatName().getTranslation());
         System.out.println("\nСтатус: " + cat8.getStatus());
         System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------9\n");
@@ -153,7 +153,7 @@ public class Loader
             System.out.println("Вес кота: " + cat9.getWeight());
         }
         System.out.println("Цвет кошки c переводом на русский: " + cat9.getCatColor().getTranslation());
-        System.out.println("Имя кота: " + cat9.catName.getTranslation());
+        System.out.println("Имя кота: " + cat9.getCatName().getTranslation());
         System.out.println("\nСтатус: " + cat9.getStatus());
         System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------10\n");
@@ -170,38 +170,58 @@ public class Loader
             System.out.println("Вес кота: " + cat10.getWeight());
         }
         System.out.println("Цвет кошки c переводом на русский: " + cat10.getCatColor() + " - " + cat10.getCatColor().getTranslation());
-        System.out.println("Имя кота: " + cat10.catName.getTranslation());
+        System.out.println("Имя кота: " + cat10.getCatName().getTranslation());
         System.out.println("\nСтатус: " + cat10.getStatus());
         System.out.println("\n\tОбъекты для наблюдений: " + Cat.getCount());
         System.out.println("\t\n    ---------===============---------11\n");
 
-        //  Object #11 -  - живой
+        //  Object #11 - живой
 
-        Cat cat11 = getKitten();
+        Cat cat11 = Cat.getKitten();
 
         System.out.println("Вес кота: " + cat11.getWeight());
         System.out.println("Цвет кошки c переводом на русский: " + cat11.getCatColor() + " - " + cat11.getCatColor().getTranslation());
-        System.out.println("Имя кота: " + cat11.catName.getTranslation());
+        System.out.println("Имя кота: " + cat11.getCatName().getTranslation());
         System.out.println("\nСтатус: " + cat11.getStatus());
         System.out.println("\t\n    ---------===============---------12\n");
 
-        //  Object #12 -  - живой. Урок 6. Инкапсуляция, геттеры и сеттеры
+        //  Object #12 - живой. Урок 6. Инкапсуляция, геттеры и сеттеры
 
-        Cat cat12 = getKitten();
-        System.out.println("Имя кота: " + cat12.catName.getTranslation() + " цвет: " + cat12.getCatColor().getTranslation());
+        Cat cat12 = Cat.getKitten();
+        cat12.setCatName(CatName.VASIA);
         cat12.setCatColor(CatColor.CREAM);
-        System.out.println("Имя кота: " + cat12.catName.getTranslation() + " цвет: " + cat12.getCatColor().getTranslation());
-        System.out.println("\t\n    ---------===============---------");
+        System.out.println("Имя кота: " + cat12.getCatName().getTranslation() + ", вес кота: " + cat12.getWeight() + " цвет: " + cat12.getCatColor().getTranslation());
+        cat12.setCatName(CatName.VASELISA);
+        cat12.setCatColor(CatColor.GOLDEN);
+        cat12.setWeight(1060.0);        // Как-бы после кастрации вес изменился.
+        System.out.println("Новые хозяева поменяли кличку коту, после яйцен клац-клац на: " + cat12.getCatName().getTranslation() + ", вес кота: " + cat12.getWeight() + " перекрасили в: " + cat12.getCatColor().getTranslation());
+        System.out.println("\t\n    ---------===============---------13\n");
 
+        //  Object #13 - живой.
+
+        Cat cat13 = new Cat();
+        System.out.println("Имя: " + cat13.getCatName().getTranslation() + ", вес кота: " + cat13.getWeight() + " цвет: " + cat13.getCatColor().getTranslation());
+        cat13.setCatName(cat12.getCatName());
+        System.out.println("Имя: " + cat13.getCatName().getTranslation() + ", вес кота: " + cat13.getWeight() + " цвет: " + cat13.getCatColor().getTranslation());
+        System.out.println("\t\n    ---------===============---------14 Копируемый объект №: 11\n");
+
+        //  Object #14 - живой. Копируемый объект №: 11.    Урок 7. Копирование объектов
+
+        Cat cat14 = cat11.copyCat();
+        System.out.println("Имя объекта №14: " + cat14.getCatName().getTranslation() + ", вес кота: " + cat14.getWeight() + " цвет: " + cat14.getCatColor().getTranslation());
+        System.out.println("Статус: " + cat14.getStatus());
+        System.out.println("\t\n    ---------===============---------15 Клонируемый объект №: 12\n");
+
+        //  Object #15 - живой. Клонируемый объект №: 12
+
+        Cat cat15 = (Cat) cat12.clone();
+        System.out.println("Имя объекта №15: " + cat15.getCatName().getTranslation() + ", вес кота: " + cat15.getWeight() + " цвет: " + cat15.getCatColor().getTranslation());
+        System.out.println("Статус: " + cat15.getStatus());
+        System.out.println("\t\n    ---------===============---------");
 
         System.out.println("\n\tОбъектов для наблюдений было: " + (Cat.getCount() + Cat.catDeadCount()));
         System.out.println("\tОбъектов сдохло из за экспериментов: " + Cat.catDeadCount());
         System.out.println("\tОбъектов для наблюдений осталось: " + Cat.getCount());
         System.out.println("\tНа нас смотрят: " + Cat.getEyesCount() + " глаз(а).");       //количество глаз, оставшихся кошек!
-    }
-
-    private static Cat getKitten()
-    {
-        return new Cat(1100.0);
     }
 }
