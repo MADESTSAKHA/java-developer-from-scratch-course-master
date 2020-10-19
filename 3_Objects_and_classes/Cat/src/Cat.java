@@ -1,11 +1,11 @@
 // Homework done
 
-public class Cat
+public class Cat implements Cloneable
 {
-    public static final int EYES_COUNT = 2;             //статичная константа количества глаз
-    public static final double MIN_WEIGHT = 1000.0;     //статичная константа минимального веса
-    public static final double MAX_WEIGHT = 9000.0;     //статичная константа максимального веса
-    private final double originWeight;
+    private static final int EYES_COUNT = 2;             //статичная константа количества глаз
+    private static final double MIN_WEIGHT = 1000.0;     //статичная константа минимального веса
+    private static final double MAX_WEIGHT = 9000.0;     //статичная константа максимального веса
+    private double originWeight;
     private double weight;
 
     private double eatenCount;   //кладем сюда вес съеденной еды.
@@ -14,6 +14,10 @@ public class Cat
     private static int catCount; //кладем сюда количество кошек.
     private static int catDeadCount; ////кладем сюда количество сдохших кошек.
     private CatColor catColor;    //Здесь цвет кошки.
+    private CatName catName;      //Здесь имена кошек.
+
+    private final double meowCat = Math.random() * 1500.0; //переменная мяу-мяу и на сколько мяукает.
+    private final double peeCat = Math.random() * 1500.0; //переменная какашек и на сколько грамм какает 8о)
 
     public CatColor getCatColor() { //Урок 6. Инкапсуляция, геттеры и сеттеры
         return catColor;
@@ -23,10 +27,13 @@ public class Cat
         this.catColor = catColor;
     }
 
-    public CatName catName;      //Здесь имена кошек.
+    public CatName getCatName() {   //Урок 6. Инкапсуляция, геттеры и сеттеры
+        return catName;
+    }
 
-    private final double meowCat = Math.random() * 1500.0; //переменная мяу-мяу и на сколько мяукает.
-    private final double peeCat = Math.random() * 1500.0; //переменная какашек и на сколько грамм какает 8о)
+    public void setCatName(CatName catName) {
+        this.catName = catName;
+    }
 
     public Cat()
     {
@@ -41,6 +48,29 @@ public class Cat
     {
         this();
         this.weight = weight;
+    }
+
+    public Cat(Cat cat)     // Урок 7. Копирование объектов
+    {
+        this.originWeight = cat.originWeight;
+        this.weight = cat.weight;
+        this.catColor = cat.catColor;
+        this.catName = cat.catName;
+    }
+
+    public Cat copyCat()        //Урок 7. Копирование объектов
+    {
+        return new Cat(this);
+    }
+
+    public Cat clone() throws CloneNotSupportedException {  // Случайно узнал про клон.
+        catCount++;
+        return (Cat) super.clone();
+    }
+
+    public static Cat getKitten() // Урок 6. Инкапсуляция, геттеры и сеттеры
+    {
+        return new Cat(1100.0);
     }
 
     private boolean isAlive() // Жива ли кошка?!?! определение по весу
@@ -127,6 +157,10 @@ public class Cat
     public Double getWeight()
     {
         return weight;
+    }
+
+    public void setWeight(Double weight) {
+        this.weight = weight;
     }
 
     public Double eaten()       //метод съеденный вес еды.
