@@ -1,7 +1,4 @@
 import com.skillbox.airport.Airport;
-import com.skillbox.airport.Flight;
-
-import static java.awt.AlphaComposite.getInstance;
 
 public class Main {
 
@@ -11,6 +8,7 @@ public class Main {
         System.out.println("--------------================--------------");
         System.out.println(yakutsk.getAllAircrafts());
         System.out.println("--------------================--------------");
+        System.out.println("Всего самолетов: " + yakutsk.getAllAircrafts().size() + " шт.");
         System.out.println("--------------================--------------");
     }
 }
