@@ -1,5 +1,6 @@
 .idea/
 out/
 DZ/
+META-INF/
 *.iml
 desktop.ini
