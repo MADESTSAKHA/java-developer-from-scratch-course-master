@@ -8,12 +8,12 @@ public class Main {
         System.out.println("Число: Char, беззнаковое целое число, которое представляет собой UTF-16 (буквы или цифры)" + " минимальное: " + (int) Character.MIN_VALUE + ", максимальное: " + (int) Character.MAX_VALUE);
         System.out.println("Число: Integer, минимальное: " + Integer.MIN_VALUE + " и максимальное: " + Integer.MAX_VALUE);
         System.out.println("Число: Long, минимальное: " + Long.MIN_VALUE + " и максимальное: " + Long.MAX_VALUE);
-        float a = Float.MIN_VALUE;
+        float a = -Float.MIN_VALUE;
         float b = Float.MAX_VALUE;
         BigDecimal decimalA = new BigDecimal(a);
         BigDecimal decimalB = new BigDecimal(b);
         System.out.println("Число: Float, \n\tминимальное: " + -Float.MIN_VALUE + " точнее: " + decimalA + "\n\tмаксимальное: " + Float.MAX_VALUE + " точнее: " + decimalB);
-        double c = Double.MIN_VALUE;
+        double c = -Double.MIN_VALUE;
         double d = Double.MAX_VALUE;
         BigDecimal decimalC = new BigDecimal(c);
         BigDecimal decimalD = new BigDecimal(d);
