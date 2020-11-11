@@ -34,8 +34,7 @@ public class Main {
             for (int c3 = 0; boxs < BOX_IN_CONTAINER; c3++) {           // Пока писал, понял что этот код можно сократить, потом понял что нельзя, потом подумал утро вечера мудренее и ушел спать!!!
                 boxs++;
                 boxCount++;
-                if (box >= boxCount)
-                {
+                if (box >= boxCount) {
                     System.out.println("\t\tЯщик: " + boxCount);
                 }
             }
@@ -47,9 +46,10 @@ public class Main {
     /**
      * ----------------========================================================-------------------------
      */ // Полосочка.
-
     public static void finishMassage() {
-        System.out.print("Необходимо:" + "\nгрузовиков - " + truckCount + " шт." + "\nконтейнеров - " + containerCount + " шт.");
+        System.out.println("Необходимо:");
+        System.out.println("грузовиков - " + truckCount + " шт.");
+        System.out.println("контейнеров - " + containerCount + " шт.");
         clear();
     }         // Финишное сообщение.
 
