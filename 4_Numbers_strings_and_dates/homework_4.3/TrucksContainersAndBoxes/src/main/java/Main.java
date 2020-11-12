@@ -40,13 +40,14 @@ public class Main {
             }
             boxs = 0;                                                   // Сброс дополнительного счетчика.
         }
-        finishMassage();
+        finishMessage();
     }
 
     /**
      * ----------------========================================================-------------------------
      */ // Полосочка.
-    public static void finishMassage() {
+
+    public static void finishMessage() {
         System.out.println("Необходимо:");
         System.out.println("грузовиков - " + truckCount + " шт.");
         System.out.println("контейнеров - " + containerCount + " шт.");
