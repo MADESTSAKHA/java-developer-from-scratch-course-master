@@ -30,8 +30,8 @@ public class TestMaskingData {
   @Test
   @DisplayName("Текст = Пин код <6160>")
   void maskingPinCode() {
-    String expected = "Пин код +++";
-    String actual = Main.searchAndReplaceDiamonds("Пин код <6160>", "+++");
+    String expected = "Пин код ***";                                                          //тут была ошибка.
+    String actual = Main.searchAndReplaceDiamonds("Пин код <6160>", "***");     //тут была ошибка.
     assertEquals(expected, actual);
   }
 
