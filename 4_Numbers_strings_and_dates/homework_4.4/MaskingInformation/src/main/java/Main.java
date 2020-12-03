@@ -4,9 +4,7 @@ public class Main {
 
     public static String searchAndReplaceDiamonds(String text, String placeholder) {
         // TODO: реализовать метод, если в строке нет <> - вернуть строку без изменений
-        text = text.replaceAll("(\\(|\\[|\\{|\\<).*?(\\)|\\]|\\}|\\>)", "***");
-        return text;
+        placeholder = text.replaceAll("(\\(|\\[|\\{|\\<).*?(\\)|\\]|\\}|\\>)", "***");
+        return placeholder;
     }
 }
-
-//FIXME Я думал что нужно сделать так чтоб каждый символ заменялся на "*", но было легче! 8о)
