@@ -1,18 +1,20 @@
 import java.util.Scanner;
 
 public class Main {
+    public static void main(String[] args) {
 
-  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-    Scanner scanner = new Scanner(System.in);
-    while (true) {
-      String input = scanner.nextLine();
-      if (input.equals("0")) {
-        break;
-      }
-      //TODO:напишите ваш код тут, результат вывести в консоль.
-      //При невалидном ФИО вывести в консоль: Введенная строка не является ФИО
+        String input = scanner.nextLine();
+        String text = input.replaceAll("[^а-яА-Я-]", " ");//Выбираем русс алфавит, ост меняем на space.
+        String[] sentences = text.split("\\s+");                    //Разделяем текст на строки.
+
+        if (sentences.length == 3) {                                      //Проверка на ФИО (Что нет лишнего).
+            System.out.println("Фамилия: " + sentences[0]);
+            System.out.println("Имя: " + sentences[1]);
+            System.out.println("Отчество: " + sentences[2]);
+        } else {
+            System.out.println("Введенная строка не является ФИО");       //Все что не ФИО.
+        }
     }
-  }
-
 }
