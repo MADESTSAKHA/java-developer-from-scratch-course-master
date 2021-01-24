@@ -2,28 +2,32 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("\nКофе-машина");
+
+        System.out.println("Кофе автомат");
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите сумму: ");
+        System.out.print("Внесите деньги: ");
         int moneyAmount = scanner.nextInt();
-        System.out.println("\tВы ввели: " + moneyAmount + " руб.\n");
+        System.out.println("Вы внесли: " + moneyAmount + " руб.\n");
 
-        String[] name = {"Cappuccino", "Espresso", "Milk", "Water"};
-        int[] price = {100, 80, 40, 20};
+        String[] drinkName = {"Americano", "Cappucino", "Espresso", "Latte", "Mocha", "Glace", "Горячий шоколад", "Milk", "Water"};
+        int[] drinkPrice = {100, 90, 80, 70, 60, 50, 40, 30, 10};
 
-        System.out.println("Вы можете купить: ");
-        for (int i = 0; i < name.length; i++) {
-            if (price[i] <= moneyAmount) {
-                System.out.println("\t" + name[i] + " - за: " + price[i]
-                        + " руб. \n\t\t\tСдача: " + (moneyAmount - price[i]) +  " руб.");
+        System.out.println("\n\tВы можете купить:");
+
+        for (int i = 0; i < drinkName.length; i++) {
+            if (moneyAmount >= drinkPrice[i]) {
+                System.out.println(drinkName[i] + " " + drinkPrice[i] + " руб." + "\n\t\t\tСдача: "
+                        + (moneyAmount - drinkPrice[i]) + " руб.");
             }
         }
-        System.out.println("            ----------==========----------");
-        for (int i = 0; i < name.length; i++) {
-            if (price[i] > moneyAmount) {
-                System.out.println("Вам не хватает: " + (price[i] - moneyAmount) + " руб на: "
-                        + name[i] + " - за: " + price[i] + " руб.");
+
+        System.out.println("   ---------==========----------");
+        
+        for (int i = 0; i < drinkName.length; i++) {
+            if (moneyAmount < drinkPrice[i]) {
+                System.out.println("Вам не хватает на покупку:\n\t" + drinkName[i] + " - "
+                        + (drinkPrice[i] - moneyAmount) + " руб.");
             }
         }
     }
