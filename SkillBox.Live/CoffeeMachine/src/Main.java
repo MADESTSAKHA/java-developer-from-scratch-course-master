@@ -17,13 +17,17 @@ public class Main {
 
         for (int i = 0; i < drinkName.length; i++) {
             if (moneyAmount >= drinkPrice[i]) {
-                System.out.println(drinkName[i] + " " + drinkPrice[i] + " руб." + "\n\t\t\tСдача: "
-                        + (moneyAmount - drinkPrice[i]) + " руб.");
+                System.out.print(drinkName[i] + " " + drinkPrice[i] + " руб.");
+                if (moneyAmount - drinkPrice[i] > 0) {
+                    System.out.println("\n\t\t\tСдача: " + (moneyAmount - drinkPrice[i]) + " руб.");
+                }else {
+                    System.out.println("\n");
+                }
             }
         }
 
         System.out.println("   ---------==========----------");
-        
+
         for (int i = 0; i < drinkName.length; i++) {
             if (moneyAmount < drinkPrice[i]) {
                 System.out.println("Вам не хватает на покупку:\n\t" + drinkName[i] + " - "
