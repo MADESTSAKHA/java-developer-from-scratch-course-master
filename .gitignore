@@ -5,4 +5,5 @@ out/
 DZ/
 META-INF/
 *.iml
+*.xml
 desktop.ini
