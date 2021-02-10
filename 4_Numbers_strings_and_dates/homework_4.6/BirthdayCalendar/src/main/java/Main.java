@@ -1,6 +1,6 @@
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 public class Main {
 
@@ -11,7 +11,6 @@ public class Main {
         int year = 1990;
 
         System.out.println(collectBirthdays(year, month, day));
-
     }
 
     public static String collectBirthdays(int year, int month, int day) {
@@ -20,21 +19,40 @@ public class Main {
         //0 - 31.12.1990 - Mon
         //1 - 31.12.1991 - Tue
 
-        Calendar calendar = Calendar.getInstance();
-        DateFormat template = new SimpleDateFormat("0 - dd.MM.yyyy - EEE");
+        LocalDate birthDays = LocalDate.of(year, month, day);// день рождения
+        LocalDate today = LocalDate.now();// сегодняшняя дата
+        DateTimeFormatter template = DateTimeFormatter.ofPattern("- dd.MM.yyyy - EEE");
+        Period period = Period.between(birthDays, today);
 
-        calendar.set(Calendar.DAY_OF_MONTH, day);
-        calendar.set(Calendar.MONTH, month);
-        calendar.add(Calendar.MONTH, -1); // Equalizer
-        calendar.set(Calendar.YEAR, year);
+        int i = 0;
+        for (; birthDays.isBefore(today) || birthDays.equals(today); i++) {
+            System.out.println(i + " " + birthDays.format(template));
+            birthDays = birthDays.plusYears(1);
+        }
+        System.out.println("Мне " + period.getYears() + " годик(ов)");
 
-        String time = template.format(calendar.getTime());
-
-        return time;
+        return "";
     }
 }
 
-//TODO optionNumber2 положительный результат в 5.
+//TODO optionNumber4 положительный результат в 1-4.
+
+//    LocalDate birthDays = LocalDate.of(year, month, day);// день рождения
+//    LocalDate today = LocalDate.now();// сегодняшняя дата
+//    String template = birthDays.format(DateTimeFormatter.ofPattern("- dd.MM.yyyy - EEE"));
+//
+//    String text = "";
+//    int i = 0;
+//        while (birthDays.isBefore(today) || birthDays.equals(today)) {
+//                text = i + " " + template;
+//                System.out.println(i + " " + template);
+//                i++;
+//                birthDays = birthDays.plusYears(1);
+//                }
+
+//                return text;
+
+//TODO optionNumber3 положительный результат в 5.
 
 //    Calendar calendar = Calendar.getInstance();
 //    DateFormat template = new SimpleDateFormat("0 - dd.MM.yyyy - EEE");
