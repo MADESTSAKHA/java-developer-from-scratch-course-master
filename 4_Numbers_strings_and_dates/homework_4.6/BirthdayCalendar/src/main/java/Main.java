@@ -21,19 +21,49 @@ public class Main {
 
         LocalDate birthDays = LocalDate.of(year, month, day);// день рождения
         LocalDate today = LocalDate.now();// сегодняшняя дата
-        DateTimeFormatter template = DateTimeFormatter.ofPattern("- dd.MM.yyyy - EEE");
-        Period period = Period.between(birthDays, today);
+        String template = birthDays.format(DateTimeFormatter.ofPattern("- dd.MM.yyyy - EEE"));
 
+        String returnDate = "";
         int i = 0;
-        for (; birthDays.isBefore(today) || birthDays.equals(today); i++) {
-            System.out.println(i + " " + birthDays.format(template));
+        while (birthDays.isBefore(today) || birthDays.equals(today)) {
+            returnDate = i + " " + template;
             birthDays = birthDays.plusYears(1);
+            i++;
         }
-        System.out.println("Мне " + period.getYears() + " годик(ов)");
-
-        return "";
+        return returnDate;
     }
 }
+
+//TODO optionNumber6 положительный результат в 1-4. чуть короче.
+
+//    LocalDate birthDays = LocalDate.of(year, month, day);// день рождения
+//    LocalDate today = LocalDate.now();// сегодняшняя дата
+//    String template = birthDays.format(DateTimeFormatter.ofPattern("- dd.MM.yyyy - EEE"));
+//
+//    String returnDate = "";
+//    int i = 0;
+//        while (birthDays.isBefore(today) || birthDays.equals(today)) {
+//                returnDate = i + " " + template;
+//                birthDays = birthDays.plusYears(1);
+//                i++;
+//                }
+//                return returnDate;
+
+//TODO optionNumber5 просто выводит даты.
+
+//    LocalDate birthDays = LocalDate.of(year, month, day);// день рождения
+//    LocalDate today = LocalDate.now();// сегодняшняя дата
+//    DateTimeFormatter template = DateTimeFormatter.ofPattern("- dd.MM.yyyy - EEE");
+//    Period period = Period.between(birthDays, today);
+//
+//    int i = 0;
+//        for (; birthDays.isBefore(today) || birthDays.equals(today); i++) {
+//                System.out.println(i + " " + birthDays.format(template));
+//                birthDays = birthDays.plusYears(1);
+//                }
+//                System.out.println("Мне " + period.getYears() + " годик(ов)");
+//
+//                return "";
 
 //TODO optionNumber4 положительный результат в 1-4.
 
@@ -44,7 +74,6 @@ public class Main {
 //    String text = "";
 //    int i = 0;
 //        while (birthDays.isBefore(today) || birthDays.equals(today)) {
-//                text = i + " " + template;
 //                System.out.println(i + " " + template);
 //                i++;
 //                birthDays = birthDays.plusYears(1);
