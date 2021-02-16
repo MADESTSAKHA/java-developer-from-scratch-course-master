@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 public class Main {
@@ -18,21 +17,37 @@ public class Main {
         //TODO реализуйте метод для построения строки в следующем виде
         //0 - 31.12.1990 - Mon
         //1 - 31.12.1991 - Tue
-
-        LocalDate birthDays = LocalDate.of(year, month, day);// день рождения
-        LocalDate today = LocalDate.now();// сегодняшняя дата
-        String template = birthDays.format(DateTimeFormatter.ofPattern("- dd.MM.yyyy - EEE"));
+        // Cделано вместе с @kovaldis из Telegram.
+        LocalDate birthDays = LocalDate.of(year, month, day);
 
         String returnDate = "";
         int i = 0;
-        while (birthDays.isBefore(today) || birthDays.equals(today)) {
-            returnDate = i + " " + template;
-            birthDays = birthDays.plusYears(1);
+        while (!birthDays.isAfter(LocalDate.now())) {
+            String dateFormat = birthDays.format(DateTimeFormatter.ofPattern(i + " - dd.MM.yyyy - EEE"));
+            returnDate = returnDate + System.lineSeparator() + dateFormat;
             i++;
+            birthDays = birthDays.plusYears(1);
         }
         return returnDate;
     }
 }
+
+//TODO optionNumber7 положительный результат в 1-4. "for".
+
+//    LocalDate birthDays = LocalDate.of(year, month, day);// день рождения
+//    LocalDate today = LocalDate.now();// сегодняшняя дата
+//    String template = birthDays.format(DateTimeFormatter.ofPattern("- dd.MM.yyyy - EEE"));
+//
+//    String returnDate = "";
+//
+//    int i = 0;
+//        for (; i <= 1; i++) {
+//                if (birthDays.isBefore(today) || birthDays.equals(today)) { //ДР раньше или равно сегодня.
+//                returnDate = i + " " + template;
+//                birthDays = birthDays.plusYears(1);
+//                }
+//                }
+//                return returnDate;
 
 //TODO optionNumber6 положительный результат в 1-4. чуть короче.
 
@@ -42,7 +57,7 @@ public class Main {
 //
 //    String returnDate = "";
 //    int i = 0;
-//        while (birthDays.isBefore(today) || birthDays.equals(today)) {
+//        while (birthDays.isBefore(today) || birthDays.equals(today)) { //ДР раньше или равно сегодня.
 //                returnDate = i + " " + template;
 //                birthDays = birthDays.plusYears(1);
 //                i++;
